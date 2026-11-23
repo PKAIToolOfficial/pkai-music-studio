@@ -1,0 +1,499 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================
+   PKAI MUSIC STUDIO
+   GLOBAL DESIGN SYSTEM
+========================================== */
+
+:root {
+  --background: #080b14;
+  --foreground: #f8fafc;
+
+  --surface: #111827;
+  --surface-secondary: #1f2937;
+  --surface-tertiary: #273449;
+
+  --border: #374151;
+
+  --primary: #7c3aed;
+  --primary-light: #a78bfa;
+  --primary-dark: #5b21b6;
+
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --accent-pink: #ec4899;
+  --accent-gold: #f59e0b;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+
+  --muted: #94a3b8;
+
+  --radius: 16px;
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================
+   SELECTION
+========================================== */
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ==========================================
+   GLOBAL LAYOUT
+========================================== */
+
+.pkai-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.pkai-section {
+  margin-bottom: 32px;
+}
+
+.pkai-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 20px;
+}
+
+/* ==========================================
+   STUDIO PANELS
+========================================== */
+
+.pkai-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pkai-card:hover {
+  border-color: var(--primary);
+}
+
+.pkai-panel {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.pkai-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.pkai-button-primary {
+  background: linear-gradient(
+    135deg,
+    var(--primary),
+    var(--accent-blue)
+  );
+  color: white;
+}
+
+.pkai-button-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+}
+
+.pkai-button-secondary {
+  background: var(--surface-secondary);
+  border-color: var(--border);
+  color: white;
+}
+
+.pkai-button-danger {
+  background: var(--danger);
+  color: white;
+}
+
+/* ==========================================
+   INPUTS
+========================================== */
+
+.pkai-input,
+.pkai-select,
+.pkai-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  color: var(--foreground);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.pkai-input:focus,
+.pkai-select:focus,
+.pkai-textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
+}
+
+.pkai-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ==========================================
+   TYPOGRAPHY
+========================================== */
+
+.pkai-heading {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.pkai-subheading {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pkai-muted {
+  color: var(--muted);
+}
+
+.pkai-gradient-text {
+  background: linear-gradient(
+    90deg,
+    var(--primary-light),
+    var(--accent-cyan)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================
+   BADGES
+========================================== */
+
+.pkai-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pkai-badge-free {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1;
+}
+
+.pkai-badge-pro {
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+}
+
+.pkai-badge-verified {
+  background: rgba(34, 197, 94, 0.15);
+  color: #86efac;
+}
+
+/* ==========================================
+   AUDIO STUDIO
+========================================== */
+
+.pkai-waveform {
+  width: 100%;
+  min-height: 90px;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pkai-mixer-channel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.pkai-meter {
+  width: 100%;
+  height: 8px;
+  background: #334155;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pkai-meter-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--success),
+    var(--accent-gold)
+  );
+  transition: width 0.15s ease;
+}
+
+/* ==========================================
+   RANGE SLIDERS
+========================================== */
+
+.pkai-range {
+  width: 100%;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+/* ==========================================
+   LOADING ANIMATION
+========================================== */
+
+.pkai-spinner {
+  width: 22px;
+  height: 22px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--primary-light);
+  border-radius: 50%;
+  animation: pkai-spin 0.8s linear infinite;
+}
+
+@keyframes pkai-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pkai-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* ==========================================
+   MODALS
+========================================== */
+
+.pkai-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+}
+
+.pkai-modal {
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+
+/* ==========================================
+   RTL SUPPORT
+========================================== */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+.pkai-bidi {
+  unicode-bidi: plaintext;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 1024px) {
+  .pkai-container {
+    padding: 18px;
+  }
+
+  .pkai-grid {
+    gap: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .pkai-container {
+    padding: 14px;
+  }
+
+  .pkai-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .pkai-card {
+    padding: 16px;
+  }
+
+  .pkai-modal {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pkai-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pkai-button {
+    width: 100%;
+  }
+
+  .pkai-heading {
+    font-size: 24px;
+  }
+}
