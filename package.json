@@ -1,21 +1,32 @@
 {
-  "name": "pkai-music-studio",
+  "name": "@pkai/frontend",
   "version": "1.0.0",
   "private": true,
-  "description": "PKAI Music Studio - AI-powered professional music production platform",
-  "workspaces": [
-    "frontend",
-    "shared"
-  ],
+  "description": "PKAI Music Studio Web Application",
   "scripts": {
-    "dev": "npm run dev --workspace=frontend",
-    "build": "npm run build --workspace=frontend",
-    "start": "npm run start --workspace=frontend",
-    "lint": "npm run lint --workspace=frontend",
-    "typecheck": "npm run typecheck --workspace=frontend"
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "next start --hostname 0.0.0.0",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit"
   },
-  "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.0.0"
+  "dependencies": {
+    "next": "15.5.9",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "lucide-react": "^0.468.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.7.2",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.5.9",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20"
   }
 }
