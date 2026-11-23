@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Build outputs
+.next/
+dist/
+build/
+out/
+coverage/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
+# Database files
+*.sqlite
+*.sqlite3
+
+# Certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Test artifacts
+playwright-report/
+test-results/
+
+# Runtime data
+uploads/
+storage/
